@@ -1,4 +1,13 @@
+# Eclipse
 .settings/
 bin/
 .classpath
 .project
+
+# Intellij
+out/
+.idea/
+**.iml
+
+# Maven
+target/
