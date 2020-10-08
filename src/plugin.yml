@@ -1,0 +1,6 @@
+name: Amongus
+author: lightnew
+version: 0.1
+main: fr.among.Main
+commands:
+ skull:
