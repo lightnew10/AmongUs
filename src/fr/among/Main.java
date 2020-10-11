@@ -6,15 +6,15 @@ import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.among.Death.DeathEvent;
-import fr.among.Report.DefaultItem;
-import fr.among.Report.PlayerInteract;
-import fr.among.Report.PlayerMove;
 import fr.among.Utils.Skull;
+import fr.among.game.AutoStart;
 import fr.among.game.GameStats;
+import fr.among.game.GameTime;
 import fr.among.listeners.GamePlayerListener;
 
 public class Main extends JavaPlugin implements Listener{
@@ -35,9 +35,8 @@ public class Main extends JavaPlugin implements Listener{
 		
 		this.getCommand("skull").setExecutor(new Skull());
 		Bukkit.getPluginManager().registerEvents(new DeathEvent(this), this);
-		Bukkit.getPluginManager().registerEvents(new PlayerInteract(), this);
-		Bukkit.getPluginManager().registerEvents(new PlayerMove(), this);
-		Bukkit.getPluginManager().registerEvents(new DefaultItem(), this);
+		Bukkit.getPluginManager().registerEvents(new GameTime(), this);
+		Bukkit.getPluginManager().registerEvents(new AutoStart(this), this);
 		return;
 	}
 	
@@ -62,6 +61,5 @@ public class Main extends JavaPlugin implements Listener{
 	public List<Player> getPlayers(){
 		return players;
 	}
-	
 	
 }

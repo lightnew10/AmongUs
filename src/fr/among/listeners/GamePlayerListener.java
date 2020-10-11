@@ -37,7 +37,7 @@ public class GamePlayerListener implements Listener {
 		p.setGameMode(GameMode.ADVENTURE);
 		e.setJoinMessage("§f[§c+§f] " + p.getCustomName());
 		
-		if(main.isState(GameStats.WAIT) && main.getPlayers().size() == 2) {
+		if(main.isState(GameStats.WAIT) && main.getPlayers().size() == 1) {
 			AutoStart start = new AutoStart(main);
 			start.runTaskTimer(main, 0, 20);
 			main.setState(GameStats.START);
