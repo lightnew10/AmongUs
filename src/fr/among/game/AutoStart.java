@@ -43,5 +43,4 @@ public class AutoStart extends BukkitRunnable implements Listener {
 		timer--;
 
 	}
-
 }
